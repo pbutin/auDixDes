@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gameCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.gameCard {
+  background-color: darkolivegreen;
+  border-radius: 20px;
+  margin: 2em;
+  width: 33%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gameCard p {
+  margin: 0;
+}
+
+.gameCard img {  
+  width: 40%;
+  border-radius: 20px 0 0 20px;
+}
+
+.gameCard .text {
+  width: 55%;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.gameCard .text .nom {
+  font-size: 1.5em;
+}
+
+.gameCard .text .description {
+  color: lightgrey;
+}
+
+.gameCard .text .age {
+  color: black;
+  font-size: 0.9em;
+}
+
+.gameCard .text .nbjoueurs {
+  color: black;
+  font-size: 0.9em;
+}
+
+.gameCard .text .categorie {
+  color: black;
+  font-size: 0.9em;
+}
+
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
