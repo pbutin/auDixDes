@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/auxDixDes/static/css/main.cb0424e6.css",
-    "main.js": "/auxDixDes/static/js/main.40c9d6ca.js",
-    "static/js/787.28cb0dcd.chunk.js": "/auxDixDes/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/auxDixDes/index.html",
-    "main.cb0424e6.css.map": "/auxDixDes/static/css/main.cb0424e6.css.map",
-    "main.40c9d6ca.js.map": "/auxDixDes/static/js/main.40c9d6ca.js.map",
-    "787.28cb0dcd.chunk.js.map": "/auxDixDes/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/aux-dix-des.butin.eu/static/css/main.cb0424e6.css",
+    "main.js": "/aux-dix-des.butin.eu/static/js/main.c3c575cb.js",
+    "static/js/787.28cb0dcd.chunk.js": "/aux-dix-des.butin.eu/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/aux-dix-des.butin.eu/index.html",
+    "main.cb0424e6.css.map": "/aux-dix-des.butin.eu/static/css/main.cb0424e6.css.map",
+    "main.c3c575cb.js.map": "/aux-dix-des.butin.eu/static/js/main.c3c575cb.js.map",
+    "787.28cb0dcd.chunk.js.map": "/aux-dix-des.butin.eu/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb0424e6.css",
-    "static/js/main.40c9d6ca.js"
+    "static/js/main.c3c575cb.js"
   ]
 }
