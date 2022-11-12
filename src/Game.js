@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import CategoryIcon from '@mui/icons-material/Category';
 import GroupIcon from '@mui/icons-material/Group';
 import CakeIcon from '@mui/icons-material/Cake';
+import TimelapseIcon from '@mui/icons-material/Timelapse';
 
 
 function FeaturedPost(props) {
@@ -51,6 +52,13 @@ function FeaturedPost(props) {
                   <GroupIcon />
                   <Typography variant="subtitle1">
                       {post.nbJoueurs}
+                  </Typography>
+                </Box>
+
+                <Box sx={{ display: 'flex', alignItems: 'center'}}>
+                  <TimelapseIcon />
+                  <Typography variant="subtitle1">
+                      {post.duration}
                   </Typography>
                 </Box>
               </Box>

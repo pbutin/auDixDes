@@ -74,7 +74,8 @@ export default function Blog() {
                 "age": i[2],
                 "description": i[3],
                 "nbJoueurs" : i[4],
-                "image": i[5]
+                "image": i[5],
+                "duration": i[6],
               }
             });
             
