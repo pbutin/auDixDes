@@ -70,12 +70,12 @@ export default function Blog() {
             games = games.map(function (i, key) {
               return {
                 "title": i[0],
-                "categorie": i[1],
-                "age": i[2],
-                "description": i[3],
-                "nbJoueurs" : i[4],
-                "image": i[5],
-                "duration": i[6],
+                "description": i[1],
+                "categorie": i[2],
+                "age": i[3],
+                "duration": i[4],
+                "nbJoueurs" : i[5],
+                "image": i[6],
               }
             });
             
