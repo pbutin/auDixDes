@@ -1,108 +1,112 @@
+import * as React from 'react';
 import { useEffect, useState } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+// import FacebookIcon from '@mui/icons-material/Facebook';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Header from './Header';
+import MainBanner from './MainBanner';
+import Game from './Game';
+import Footer from './Footer';
 
-import './App.css';
-import getGamesAndDate from './SheetApiHelper';
+import getAllGames from './SheetApiHelper';
+
+const sections = [
+  { title: 'Les jeux', url: '#' },
+  { title: 'Planning', url: '#' },
+  { title: 'Tarif', url: '#' },
+  { title: 'Accomplissement', url: '#' },
+  { title: 'Info utile', url: '#' },
+];
+
+const mainBanner = {
+  title: 'Bienvenue chez Aux Dix Dès',
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
+  image: 'https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg',
+  imageText: 'main image description'
+};
+
+const games = [
+  {
+    title: 'Featured post',
+    date: 'Nov 12',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+  {
+    title: 'Post title',
+    date: 'Nov 11',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://source.unsplash.com/random',
+    imageLabel: 'Image Text',
+  },
+];
 
 
-function App() {
-  const [allGames, setAllGames] = useState([]);
-  const [error, setError] = useState();
-  const [games, setGames] = useState([]);
-  const [search, setSearch] = useState("");
 
+const theme = createTheme();
 
-  
-  const onChangeHandler = event => {
-    const value = event.target.value;
-    setSearch(value);
-  };
+export default function Blog() {
 
-  useEffect(() => {
-    const filtered = allGames.filter(game => game.nom.toLowerCase().includes(search));
-    setGames(filtered);
-  }, [search]);
+    const [allGames, setAllGames] = useState([]);
+    const [error, setError] = useState();
+    const [games, setGames] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await getGamesAndDate();
-
-        console.log(res.data);
-
-
-        let games = res.data.valueRanges[0].values;
-        
-        games = games.map(function (i, key) {
-          return {
-            "nom": i[0],
-            "categorie": i[1],
-            "age": i[2],
-            "description": i[3],
-            "nbJoueurs" : i[4],
-            "image": i[5]
+    useEffect(() => {
+        (async () => {
+          try {
+            const res = await getAllGames();
+    
+            console.log(res.data);
+    
+    
+            let games = res.data.valueRanges[0].values;
+            
+            games = games.map(function (i, key) {
+              return {
+                "title": i[0],
+                "categorie": i[1],
+                "age": i[2],
+                "description": i[3],
+                "nbJoueurs" : i[4],
+                "image": i[5]
+              }
+            });
+            
+            games.shift();
+    
+            setAllGames(games);
+            setGames(games);
+    
+          } catch (error) {
+            setError(error);
           }
-        });
-        
-        games.shift();
-
-        setAllGames(games);
-        setGames(games);
-
-      } catch (error) {
-        setError(error);
-      }
-    })();
-  }, []);
-
-  if (games[0]) {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Aux Dix Dès
-          </p>
-          <p>Les jeux :</p>
-          
-          <input
-            type="text"
-            name="name"
-            onChange={onChangeHandler}
-            value={search}
-          />
-          <div className='gameCards'>
-            {
-              games.map(game =>
-                <div className='gameCard'>
-                  <img src={game.image} alt="Non disponible"></img>
-                  <div className='text'>
-                    <p className='nom'>{game.nom}</p>
-                    <p className='description'>{game.description}</p>
-                    <div className='ligne'>
-                      <p className='categorie'>{game.categorie}</p>
-                      <p className='age'>{game.age}</p>
-                      <p className='nbjoueurs'>{game.nbJoueurs}</p>
-                      <p className=''></p>
-                    </div>
-                  </div>
-                </div>
-              )
-            }
-          </div>
-        </header>
-
-      </div>
-    );
-  }
+        })();
+      }, []);
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Aux dis dès
-        </p>
-      </header>
-      <p>pas de jeu trouvé</p>
-
-    </div>)
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Header title="Aux Dix Dès" sections={sections} />
+        <main>
+          <MainBanner post={mainBanner} />
+          <Grid container spacing={4}>
+            {games.map((post) => (
+              <Game key={post.title} post={post} />
+            ))}
+          </Grid>
+        </main>
+      </Container>
+      <Footer
+        title="Au Dix Dès"
+        description="Tout droits reservé"
+      />
+    </ThemeProvider>
+  );
 }
-
-export default App;

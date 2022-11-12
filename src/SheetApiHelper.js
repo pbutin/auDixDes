@@ -8,8 +8,8 @@ const jeuxRange = `ranges=Jeux!A:Z`;
 const options = 'valueRenderOption=FORMULA&dateTimeRenderOption=FORMATTED_STRING';
 const url = `${baseURL}?${key}&${jeuxRange}&${options}`;
 
-function getGamesAndDate() {
+function getAllGames() {
   return axios.get(url);
 }
 
-export default getGamesAndDate;
+export default getAllGames;
