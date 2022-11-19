@@ -69,13 +69,15 @@ export default function Blog() {
             
             games = games.map(function (i, key) {
               return {
-                "title": i[0],
-                "description": i[1],
-                "categorie": i[2],
-                "age": i[3],
-                "duration": i[4],
-                "nbJoueurs" : i[5],
-                "image": i[6],
+                "id": i,
+                "display": i[0],
+                "title": i[1],
+                "description": i[2],
+                "categorie": i[3],
+                "age": i[4],
+                "duration": i[5],
+                "nbJoueurs" : i[6],
+                "image": i[7],
               }
             });
             
@@ -99,7 +101,7 @@ export default function Blog() {
           <MainBanner post={mainBanner} />
           <Grid container spacing={4}>
             {games.map((post) => (
-              <Game key={post.title} post={post} />
+              <Game key={post.id} post={post} />
             ))}
           </Grid>
         </main>

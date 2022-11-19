@@ -13,7 +13,7 @@ import CakeIcon from '@mui/icons-material/Cake';
 import TimelapseIcon from '@mui/icons-material/Timelapse';
 
 
-function FeaturedPost(props) {
+function Game(props) {
   const { post } = props;
 
   return (
@@ -68,14 +68,5 @@ function FeaturedPost(props) {
   );
 }
 
-FeaturedPost.propTypes = {
-  post: PropTypes.shape({
-    date: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    imageLabel: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
-export default FeaturedPost;
+export default Game;
