@@ -14,7 +14,7 @@ import TimelapseIcon from '@mui/icons-material/Timelapse';
 
 
 function Game(props) {
-  const { post } = props;
+  const { game } = props;
 
   return (
     <Grid item xs={12} md={6}>
@@ -22,43 +22,43 @@ function Game(props) {
             <CardMedia
                 component="img"
                 sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-                image={post.image}
-                alt={post.imageLabel}
+                image={game.image}
+                alt={game.imageLabel}
             />
             <CardContent sx={{ flex: 1 }}>
               <Typography component="h2" variant="h5">
-                  {post.title}
+                  {game.title}
               </Typography>
               <Typography variant="subtitle1" paragraph>
-                  {post.description}
+                  {game.description}
               </Typography>
 
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <CategoryIcon />
                   <Typography variant="subtitle1">
-                      {post.categorie}
+                      {game.categorie}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <CakeIcon />
                   <Typography variant="subtitle1">
-                      {post.age}
+                      {game.age}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <GroupIcon />
                   <Typography variant="subtitle1">
-                      {post.nbJoueurs}
+                      {game.nbJoueurs}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <TimelapseIcon />
                   <Typography variant="subtitle1">
-                      {post.duration}
+                      {game.duration}
                   </Typography>
                 </Box>
               </Box>

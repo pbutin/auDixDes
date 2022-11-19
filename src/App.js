@@ -100,8 +100,9 @@ export default function Blog() {
         <main>
           <MainBanner post={mainBanner} />
           <Grid container spacing={4}>
-            {games.map((post) => (
-              <Game key={post.id} post={post} />
+            {games.map((game) => (
+              (game.display) && 
+                <Game key={game.id} game={game} />
             ))}
           </Grid>
         </main>
