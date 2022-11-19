@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-// import FacebookIcon from '@mui/icons-material/Facebook';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './Header';
 import MainBanner from './MainBanner';
@@ -28,26 +27,6 @@ const mainBanner = {
   imageText: 'main image description'
 };
 
-const games = [
-  {
-    title: 'Featured post',
-    date: 'Nov 12',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: 'Post title',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-];
-
-
 
 const theme = createTheme();
 
@@ -56,6 +35,10 @@ export default function Blog() {
     const [allGames, setAllGames] = useState([]);
     const [error, setError] = useState();
     const [games, setGames] = useState([]);
+
+    useEffect(() => {
+      document.title = "Aux Dix Dès - Les Jeux"
+    }, [])
 
     useEffect(() => {
         (async () => {
@@ -97,7 +80,7 @@ export default function Blog() {
       <CssBaseline />
       <Container maxWidth="lg">
         <Header title="Aux Dix Dès" sections={sections} />
-        <main>
+        <main className='main'>
           <MainBanner post={mainBanner} />
           <Grid container spacing={4}>
             {games.map((game) => (

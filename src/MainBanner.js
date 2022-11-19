@@ -12,13 +12,13 @@ function MainBanner(props) {
     <Paper
       sx={{
         position: 'relative',
-        backgroundColor: 'grey.800',
         color: '#fff',
         mb: 4,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundImage: `url(${post.image})`,
+        borderRadius: '1.2rem',
       }}
     >
       {/* Increase the priority of the hero background image */}
@@ -31,6 +31,7 @@ function MainBanner(props) {
           right: 0,
           left: 0,
           backgroundColor: 'rgba(0,0,0,.3)',
+          borderRadius: '1.2rem',
         }}
       />
       <Grid container>

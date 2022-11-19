@@ -35,12 +35,13 @@ function Header(props) {
       >
         {sections.map((section) => (
           <Link
+            className='hover-underline-animation'
             color="inherit"
             noWrap
             key={section.title}
             variant="body2"
             href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
+            sx={{ p: 1, flexShrink: 0, fontWeight: 600, textDecoration: 'none', fontSize: '1.1rem', padding: 0, paddingTop: '0.75rem'}}
           >
             {section.title}
           </Link>
@@ -49,15 +50,5 @@ function Header(props) {
     </React.Fragment>
   );
 }
-
-Header.propTypes = {
-  sections: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  title: PropTypes.string.isRequired,
-};
 
 export default Header;

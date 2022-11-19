@@ -18,10 +18,12 @@ function Game(props) {
 
   return (
     <Grid item xs={12} md={6}>
-        <Card sx={{ display: 'flex' }}>
+        <Card sx={{ 
+          display: 'flex',
+          borderRadius: '0.7rem' }}>
             <CardMedia
                 component="img"
-                sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
+                sx={{ width: 160, display: { xs: 'none', sm: 'block' }, objectFit: "contain" }}
                 image={game.image}
                 alt={game.imageLabel}
             />
@@ -29,35 +31,35 @@ function Game(props) {
               <Typography component="h2" variant="h5">
                   {game.title}
               </Typography>
-              <Typography variant="subtitle1" paragraph>
+              <Typography variant="subtitle1" paragraph align="justify">
                   {game.description}
               </Typography>
 
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <CategoryIcon />
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" pl={'0.3rem'} pr={'1.5rem'}>
                       {game.categorie}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <CakeIcon />
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" pl={'0.3rem'} pr={'1.5rem'}>
                       {game.age}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <GroupIcon />
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" pl={'0.3rem'} pr={'1.5rem'}>
                       {game.nbJoueurs}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: 'flex', alignItems: 'center'}}>
                   <TimelapseIcon />
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" pl={'0.3rem'} pr={'1.5rem'}>
                       {game.duration}
                   </Typography>
                 </Box>
