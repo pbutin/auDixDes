@@ -3,6 +3,7 @@ import MainBanner from '../MainBanner';
 import Grid from '@mui/material/Grid';
 import { useEffect, useState } from 'react';
 import { getAllEvents } from '../../utils/SheetApiHelper';
+import Event from './Event';
 
 
 export default function Planning() {
@@ -36,14 +37,12 @@ export default function Planning() {
             events = events.map(function (i, key) {
               return {
                 "id": i,
-                "display": i[0],
-                "title": i[1],
-                "description": i[2],
-                "categorie": i[3],
-                "age": i[4],
-                "duration": i[5],
-                "nbJoueurs" : i[6],
-                "image": i[7],
+                "display" : i[0],
+                "date": i[1],
+                "lieu": i[2],
+                "description": i[3],
+                "lat": i[4],
+                "long": i[5]
               }
             });
             
@@ -62,7 +61,10 @@ export default function Planning() {
     <div>    
         <MainBanner post={mainBanner} />
         <Grid container spacing={4}>
-       
+          {events.map((event) => (
+              (event.display) && 
+              <Event key={event.id} event={event} />
+          ))}
         </Grid>
     </div>
   );
