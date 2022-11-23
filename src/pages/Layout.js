@@ -9,8 +9,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 const sections = [
-    { title: 'Les jeux', url: '#' },
-    { title: 'Planning', url: '#' },
+    { title: 'Les jeux', url: '/' },
+    { title: 'Planning', url: '/planning' },
     { title: 'Tarif', url: '#' },
     { title: 'Accomplissement', url: '#' },
     { title: 'Info utile', url: '#' },

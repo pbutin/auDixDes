@@ -1,41 +1,39 @@
 
 import MainBanner from '../MainBanner';
-import Game from './Game';
 import Grid from '@mui/material/Grid';
 import { useEffect, useState } from 'react';
-import { getAllGames } from '../../utils/SheetApiHelper';
+import { getAllEvents } from '../../utils/SheetApiHelper';
 
 
-export default function Games() {
+export default function Planning() {
 
     const mainBanner = {
-        title: 'Bienvenue chez Aux Dix Dès',
+        title: 'Les evenements à venir',
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
-        image: 'https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg',
+        image: 'https://www.piedmontchurch.org/wp-content/uploads/2019/11/calendar-banner.png',
         imageText: 'main image description'
     };
 
-    const [allGames, setAllGames] = useState([]);
     const [error, setError] = useState();
-    const [games, setGames] = useState([]);
+    const [events, setEvents] = useState([]);
 
     useEffect(() => {
-    document.title = "Aux Dix Dès - Les Jeux"
+        document.title = "Aux Dix Dès - Planning"
     }, [])
 
     
     useEffect(() => {
         (async () => {
           try {
-            const res = await getAllGames();
+            const res = await getAllEvents();
     
             console.log(res.data);
     
     
-            let games = res.data.valueRanges[0].values;
+            let events = res.data.valueRanges[0].values;
             
-            games = games.map(function (i, key) {
+            events = events.map(function (i, key) {
               return {
                 "id": i,
                 "display": i[0],
@@ -49,10 +47,9 @@ export default function Games() {
               }
             });
             
-            games.shift();
+            events.shift();
     
-            setAllGames(games);
-            setGames(games);
+            setEvents(events);
     
           } catch (error) {
             setError(error);
@@ -65,10 +62,8 @@ export default function Games() {
     <div>    
         <MainBanner post={mainBanner} />
         <Grid container spacing={4}>
-        {games.map((game) => (
-            (game.display) && 
-            <Game key={game.id} game={game} />
-        ))}
-        </Grid></div>
+       
+        </Grid>
+    </div>
   );
 }
