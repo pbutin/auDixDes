@@ -11,9 +11,9 @@ const theme = createTheme();
 const sections = [
     { title: 'Les jeux', url: '/' },
     { title: 'Planning', url: '/planning' },
-    { title: 'Tarif', url: '#' },
-    { title: 'Accomplissement', url: '#' },
-    { title: 'Info utile', url: '#' },
+    { title: 'Tarif', url: '/#' },
+    { title: 'Accomplissement', url: '/#' },
+    { title: 'Info utile', url: '/#' },
   ];
   
 const Layout = () => {
