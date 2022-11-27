@@ -10,7 +10,7 @@ function Event(props) {
   const { event } = props;
 
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} sx={{paddingBottom: '25px'}}>
         <Card sx={{ 
           borderRadius: '0.7rem' }}>
             <CardContent>
@@ -22,7 +22,7 @@ function Event(props) {
                     {event.date}
                 </Typography>
               </Box>
-                <Typography variant="subtitle1" paragraph align="justify">
+                <Typography variant="subtitle1" paragraph align="justify" sx={{marginBottom:0}}>
                     {event.description}
                 </Typography>
             </CardContent>
