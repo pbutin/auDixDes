@@ -35,9 +35,9 @@ export default function Games() {
     
             let games = res.data.valueRanges[0].values;
             
-            games = games.map(function (i, key) {
+            games = games.map(function (i, index) {
               return {
-                "id": i,
+                "id": index,
                 "display": i[0],
                 "title": i[1],
                 "description": i[2],

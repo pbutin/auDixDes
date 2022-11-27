@@ -35,9 +35,9 @@ export default function Planning() {
     
             let events = res.data.valueRanges[0].values;
             
-            events = events.map(function (i, key) {
+            events = events.map(function (i, index) {
               return {
-                "id": i,
+                "id": index,
                 "display" : i[0],
                 "date": i[1],
                 "lieu": i[2],

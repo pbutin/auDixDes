@@ -16,7 +16,14 @@ function Map(props) {
 
             {events.map((event) => (
                 (event.display) && 
-                    <Marker  key={event.id}  position={[event.long, event.lat]}>
+                    <Marker
+                        key={event.id}
+                        position={[event.long, event.lat]}
+                        eventHandlers={{
+                            click: (e) => {
+                              console.log('marker clicked', event)
+                            },
+                          }}>
                         <Popup>
                            { event.lieu }
                         </Popup>
