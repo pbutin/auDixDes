@@ -65,7 +65,7 @@ export default function Planning() {
           <Map events={events}/>
         </Grid>
         <Grid item xs={12} md={6} sx={{ 
-            paddingLeft: '50px'
+            paddingLeft: { xs : 0, md:'50px'}
           }}
           >
           {events.map((event) => (
