@@ -14,13 +14,12 @@ function Map( {events, setSelected} ) {
             />
 
             {events.map((event) => (
-                (event.display) && 
+                (event.display) && Number(event.long) && Number(event.lat) &&
                     <Marker
                         key={event.id}
                         position={[event.long, event.lat]}
                         eventHandlers={{
                             click: (e) => {
-                              console.log('marker clicked', event.id)
                               setSelected(event.id)
                             },
                           }}>
