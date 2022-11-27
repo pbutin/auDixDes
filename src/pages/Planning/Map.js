@@ -3,8 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import './Map.css';
 
 
-function Map(props) {
-  const { events } = props;
+function Map( {events, setSelected} ) {
 
   return (
     <div>
@@ -21,7 +20,8 @@ function Map(props) {
                         position={[event.long, event.lat]}
                         eventHandlers={{
                             click: (e) => {
-                              console.log('marker clicked', event)
+                              console.log('marker clicked', event.id)
+                              setSelected(event.id)
                             },
                           }}>
                         <Popup>

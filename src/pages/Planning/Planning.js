@@ -19,6 +19,7 @@ export default function Planning() {
 
     const [error, setError] = useState();
     const [events, setEvents] = useState([]);
+    const [selected, setSelected] = useState();
 
     useEffect(() => {
         document.title = "Aux Dix Dès - Planning"
@@ -62,7 +63,7 @@ export default function Planning() {
     <Grid container>
         <MainBanner post={mainBanner} />
         <Grid item  xs={12} md={6}>
-          <Map events={events}/>
+          <Map events={events} setSelected={setSelected}/>
         </Grid>
         <Grid item xs={12} md={6} sx={{ 
             paddingLeft: { xs : 0, md:'50px'}
@@ -70,7 +71,7 @@ export default function Planning() {
           >
           {events.map((event) => (
               (event.display) && 
-              <Event key={event.id} event={event} />
+              <Event key={event.id} event={event} selected={selected}/>
           ))}
         </Grid>
     </Grid>

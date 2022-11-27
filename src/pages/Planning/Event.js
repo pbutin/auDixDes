@@ -6,13 +6,17 @@ import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 
 
-function Event(props) {
-  const { event } = props;
+function Event({event, selected}) {
 
   return (
     <Grid item xs={12} sx={{paddingBottom: '25px'}}>
         <Card sx={{ 
-          borderRadius: '0.7rem' }}>
+          borderRadius: '0.7rem',
+          border:
+              selected === event.id
+                ? 'black solid 2px'
+                : 'none'
+          }}>
             <CardContent>
               <Box  sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                 <Typography component="h2" variant="h5">
