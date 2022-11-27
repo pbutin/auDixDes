@@ -37,19 +37,12 @@ function Header(props) {
         {sections.map((section) => (
           <RouterLink
             to={section.url}
-            >
-            <Link
-              className='hover-underline-animation'
-              color="inherit"
-              noWrap
-              key={section.title}
-              variant="body2"
-              to={section.url}
-              sx={{ p: 1, flexShrink: 0, fontWeight: 600, textDecoration: 'none', fontSize: '1.1rem', padding: 0, paddingTop: '0.75rem'}}
+            key={section.title}
+            className='hover-underline-animation menu'
+            color="inherit"
+            variant="body2"
             >
             {section.title}
-          </Link>
-
           </RouterLink>
 
         ))}

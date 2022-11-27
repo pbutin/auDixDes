@@ -36,6 +36,14 @@ code {
   transform-origin: bottom left;
 }
 
+.menu {
+  flex-shrink: 0;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0;
+  padding-top: 0.75rem;
+}
 .main {
   padding-top: 1.5rem;
 }
